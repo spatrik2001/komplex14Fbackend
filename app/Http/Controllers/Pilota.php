@@ -8,6 +8,6 @@ use Illuminate\Support\Facades\DB;
 class Pilota extends Controller
 {
     public function getPilotak() {
-        return DB::select("SELECT * FROM versenyzok");
+        return DB::select("SELECT * FROM versenyzok INNER JOIN csapatok ON csapatok.csapatId = versenyzok.csapat");
     }
 }
